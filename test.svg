@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="553px" height="231px" viewBox="-0.5 -0.5 553 231" content="&lt;mxfile host=&quot;Electron&quot; modified=&quot;2021-03-15T12:37:03.129Z&quot; agent=&quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/12.4.2 Chrome/78.0.3904.130 Electron/7.1.4 Safari/537.36&quot; etag=&quot;YiCQ0b3syjCraDDEwdPI&quot; version=&quot;12.4.2&quot; type=&quot;device&quot; pages=&quot;11&quot;&gt;&lt;diagram id=&quot;HxISrynFcT5EFYbBiDgi&quot; name=&quot;helloworld&quot;&gt;xZVdk5MwFIZ/DZfOQAKUXiq7VuusXnTc1b1LSSBxAwdDutD99YYSvqQdnbHqFee85+SD5z0DDo7zZqNIye+AMukglzYOvnEQ8jw3NI9WOXbKyl93QqYEtU2jsBMvzIquVQ+CsmrWqAGkFuVcTKAoWKJnGlEK6nlbCnJ+akkythB2CZFL9UFQzYf3csfCOyYybo+OAlvISd9shYoTCvVEwrcOjhWA7qK8iZls4fVcunVvL1SHiylW6N9ZkO2fs5X/LX//+BEdv6rvDzfb1Su7yzORB/vC9rL62BNQcCgoazdxHfym5kKzXUmStlobz43GdS5N5pmQkoqfetskhUJbRyOTEimywsSSpbqtCiljkKBOx+A0TVGSGL3SCp7YpELDfRiEpmLvypRmzUUI3oDWzCSDnGl1NC39gt4NO47IDbq8Hs0NsO3hE19RLxI7UNmw98jcBBb7BUdXyWO5idH9J/qhiJ42iL3szljAzSqoQZlRvWyG92szrsAL4594rd0Fr4HplFd4BVzbZvul3n8u1/dr/DqI76pKbc/ggoP+s6H9L5Po+3Oy2FuSPQcW/S2waAG20kRdFy0NWET9c2gjtMfhldBi9M/QmnT8gp9qk/8gvv0B&lt;/diagram&gt;&lt;diagram name=&quot;hello&quot; id=&quot;_Ds_UEwc1GCsMbXrUbmA&quot;&gt;vZRdT4MwFEB/DY8m0A7ER8WpMdl8mGbGt44W2lgolk7AX28Z5WssLks2nyjn3t7mntvUgkFSPkqU0YXAhFvAxqUF7y0AHMf29KcmVUOuZzcNiCXDJqkHK/ZDDLQN3TJM8lGiEoIrlo1hKNKUhGrEkJSiGKdFgo9PzVBMJmAVIj6la4YV7fqy+8ATYTE1R/uuCSSoTTYgpwiLYoDg3IKBFEI1q6QMCK/ltV5uP5Y+y5cwffaF/Hpbv74s3q+aYg+nbOlakCRV5y0NmtLfiG+NL6p3CdOwqlqLUmxTTOpKjgXvCsoUWWUorKOFvjeaUZVwEzY1iVSk3BvCkQ6cTqu+j0QkRMlK7zNVwMxMotr7LwaDbadFBzP1DEPmLsVd6d6XXhhlJ+jzJ/ryP9TZx9VFjPNAcCF3e2EURSAMNc+VFJ9kEMHexnO9C8qG7p5sbyr7kGtwKdcOnMpWSKqzCscu8fHskHAfbKB3SeEA/ptw/ds/W7vY4PGH818=&lt;/diagram&gt;&lt;diagram name=&quot;world&quot; id=&quot;-5BYcKmhLD61SmNudl8Y&quot;&gt;vZTPb4IwFID/Go5LoAXU44ZuHuZFD0t2q7TQxkJJqQL761ek/BIzY6I7Ub73+pr3vaYWDJLyQ6KMbgQm3AI2Li24tABwHNvXn5pUDZm5iwbEkmGT1IMd+yEG2oYeGSb5KFEJwRXLxjAUaUpCNWJISlGM0yLBx6dmKCYTsAsRn9IvhhXt+rL7wJqwmJqj554JJKhNNiCnCItigODKgoEUQjWrpAwIr+W1Xr7X6HW7OSy3Ofs80dkBbsLFS1Ps/Z4tXQuSpOqxpUFT+oT40fgqhNSGm4ZV1VqU4phiUldyLPhWUKbILkNhHS30vdGMqoSbsKlJpCLlxRBudOB0WvV9JCIhSlZ6n6kCXDOJ6uK/GAy2nRYdzNQ3DJm7FHele196YZTdoQ9O9OV/qLNvq4sY54HgQp73wiiKQBhqnispDmQQwf7e9/wnyobehWx/Kvuaa/As1+7UtUJSPdQ39sgcu9d8z8Ee+s/0DeC/+da//at1jg3efrj6BQ==&lt;/diagram&gt;&lt;diagram id=&quot;fkA1e424WB12Zu9J_Kcg&quot; name=&quot;stringjoin&quot;&gt;3ZXfT4MwEID/Gh5NgAKbr8OpMTGLTmP0xXS0QLVQ0hVh/vWWcfwai8uSLSY+Ub5rr7nvLqmB/KS8kTiL7wWh3LBNUhroyrBtyzI9/anIpiYT57IGkWQENnVgyb4pQBNozghdDzYqIbhi2RAGIk1poAYMSymK4bZQ8OGtGY7oCCwDzMf0hREVt3WZXeCWsiiGq6cuBBLcbAawjjERRQ+huYF8KYSqV0npU17Ja7yo9+dwgfjd2xPDrw/FQj3OrIs62fUxR9oSJE3VaVPbdeovzHPwtVaSpdGHYClUrTaNSinylNAqnWWgWREzRZcZDqpooYdHs1glHMKQmEpFy51OHCjDat3qoaQioUpu9DnI4jjQDphH1DSy6HW3aVnca+wEGIaBitrUnTS9AG9HOEQjh/gXdeZhdSHj3BdcyO1ZRFw6JY7mujXik/YiU3uFPO+cstGObGsse59r+1yunZHr1b917fyxa3fkWuTqpLbDMLSDYJ9t4q0895y2XXfHtu2ey7b+7R6Jbaz31KL5Dw==&lt;/diagram&gt;&lt;diagram id=&quot;323XYGpAfKPGNLH6XQ7N&quot; name=&quot;helloworld implementation components&quot;&gt;5ZjZjpswFIafhstKYJbAZZNMm9GoUqVUitKbymADnjg4NaaEPH1N4pCA0UyXYWgzV7H/4yX+zuFnMezZdv+Rw136iSFMDWCivWHPDQAsy/TkT61UJ2XiBCch4QSpQRdhSQ5YiaZSC4Jw3hooGKOC7NpixLIMR6KlQc5Z2R4WM9redQcTrAnLCFJdXREk0uZc5iWwwCRJ1da+qwJbeB6shDyFiJVXkn1n2DPOmDi1tvsZpjW8MxeUTjfhfP7wBT88+vlhtTAD891psQ+/M6U5AseZ+OOlQ3hw4Pp+jaMidxdo+n1jflNTzB+QFoqXOquozgA5KzKE60VMw56WKRF4uYNRHS1lyUgtFVsqe5ZsIpinx7F1J2aZUAXhyy6kJMlkm+JY1FFC6YxRxo/b2HEcgyiSei442+CrCPJCz/VkRP1XzAXed5L7DBmrSZesc8y2WPBKzlOrBIpC1e6Wl3JxbaWlV5UCziJUJZo0K1/SIBsqE/1ZYZPq6/v79XIarAsTrrjzeX/oyUoqZ7EnUmM9n5qh6DVXetVcWho/C/Tw84bCZ2n4SsalbfwX+JqqGg0f0PDJS5JkySMj2b/J0OmW4OQXGU6GYmhrDOHfGWvHLZGLfeT0uaUPQtsb0i0dswPb12H3sQZDsXY01uGtsgY93vqqrF3dG16U9YhPATbo1HWPEb8qa+/tsAbuyKwnGmtWiFuh7XYrO3DHpe33PGFA/rK8R3Rt0L1Dju0kwdviPbqbnO/Stwrc7/rJ2Lz1N74bsm+v+3YznH3L7uV71jF29VXQvvsJ&lt;/diagram&gt;&lt;diagram id=&quot;ubMjPSG3AIbtg7ZnIbfu&quot; name=&quot;helloworld implementation connections&quot;&gt;7ZlLc9owEMc/DUc6lmUb5xpCk+m0vWTSkl46wpYfqfAyQg6mn74yyPghNyEhxgnJCe3qYfTb/Us79gCP59klJ4voG/iUDUzDzwb4YmCaCBmO/Mk9661nZJ1tHSGPfTWodFzHf6lyGsqbxj5d1gYKACbiRd3pQZJQT9R8hHNY1YcFwOpPXZCQao5rjzDd+zP2RbTbl1F2XNE4jNSjXVt1zEkxWDmWEfFhVXHhyQCPOYDYtubZmLIcXsFFGL/nNp18mQ4nN8Jwrn5lN5fD7WKfnzJltwVOE/HspeHH7Gr1Pb1Al8NhsJhOb9MxV1OMe8JSxUvtVawLgBzSxKf5IsYAn6+iWNDrBfHy3pVMGemLxJxJC8mmT5bRZmxuBJAIlRCuNAmLw0S2GQ1E3hszNgYGfPMY7BPqBp70LwWHP7TS43gunQWyR/1XygXNGsF9hAzahUvmOYU5FXwt5xWrFBFWKb6L+KpMGBsrX1TJFbNwEpWk4W7tMhCyoWLxhJCbWlwiOQseCA56PDhd8TOtBj9L57djXOXndIUPa/hWwOXB8SbwYadvfJaGT4oyTsI7iJPXydBqMjT2ZDjqiqGtMSSHHa3N89Kmrm+1nZeuOcOO0yVs3ICNdNhtrM2uWDsa69nJsm45W4/KGo00tNSXFZcygYsIQkgIm5Te8zr8csxXgIVCfkeFWKtqgaQC6gGhWSymlfZtvtQnW1kXmVp5Y6wLI5H7nVaNyqzcLKdtrGLedn/5pp4RSAkGUu7RB8YpgILwkD60nt2eGJwyIuL7+p978TCP9CvgRSUVBIHptZZ7vjNz7C4lhe1GudJy3x5XUs6HpA6TlLunpJw+JeW+H0lht29JuR+SOkxSZ3tKCuE+NXWmaQpScSqqspuqMu2eVaW/LlrKBHlZ4D0W2yZ+bZUBel/A+783rI9747B7A5n7XhxGe2oc5+JAdi+BfvNB+4+ejxQ0/bX4SR2HCDUv/L6PQ/1F+gnVV07zpXF39ZU0yw+Fm77K51Y8+Qc=&lt;/diagram&gt;&lt;diagram id=&quot;ZOF5iJDKw83U33L5O8sR&quot; name=&quot;hello implementation&quot;&gt;1ZXfk5owEMf/Gh47A4ki93h6ep2btvdAO04fI1kgY2A1RNH+9U0kIogzHds60z6RfPdHyGeXxaOz4vCq2Cb/jBykR3x+8OiLR0gQ+KF5WOXYKJPRUyNkSnDndBFi8QOc6Dt1JzhUPUeNKLXY9MUEyxIS3dOYUlj33VKU/VM3LIOBECdMDtWl4Dpv7+VfDB9BZLk7Oho7Q8HOzk6ocsax7kh07tGZQtTNqjjMQFp4Zy4L+ia/b+NtsV+Tcr2E9/hdfmiSLe4Jaa+goNS/nTrmyy9vyeTTV+Yvo/m3l9docXQh/p7JneOVmyh0F9bHM0WFu5KDzeR7dFrnQkO8YYm11qZvjJbrQppdYJZ7UFqYCjxLkZVG02gd3EnGBoer0vziXkEL23QpYAFaHU2cy9J2mmtQErl93Sn3uYZ5p9LBxInMtVjW5r5gNAtH8g6qwYBq9WdEUyHlDCWqUyxN05QkidErrXANHQsPV+E4fCDtkX9FOxzSvgWbPIo1GbLWTOm/ypuPIeKjW7wjsqLhI3m3nfuv8KYD3h4JpTl1ulJmlekTjGsFy1M1bGHo89BcQcmtg2dfO9zu7EidNpPIuv9Hw+jq86DkxjAa3ajX0/31MtvLz+dk6/zC6fwn&lt;/diagram&gt;&lt;diagram name=&quot;world implementation&quot; id=&quot;4RX1tygx-W_4RDwDW_3r&quot;&gt;1ZXBbqMwEIafhmMlsAlNjkmabC+7h0arnh08gFXDsMYpSZ++NhgCIVIVbSPtnrD/GY/x9w/Go+v8+EOxMvuJHKRHfH706JNHSBD4kXlY5dQqj+GiFVIluEs6CzvxAU70nXoQHKpRokaUWpRjMcaigFiPNKYU1uO0BOV415KlMBF2MZNT9VVwnfXn8s+BZxBp5raez1wgZ12yE6qMcawHEt14dK0QdTvKj2uQFl7HZft7s3zb4cPHYhuUv5KXl+A5fWiLbW9Z0h9BQaG/tzRpS78zeXC8alSGcHtgfeooKjwUHGwl36OrOhMadiWLbbQ2fWO0TOfSzAIzfAelhXFgKUVaGE2jTXA7mRgcL6z54lxBD9t0KWAOWp3MOlel7zTXoGTu5vXA7s7DbOB08OhE5los7WufMZqBI3kDVTqhWv0d0URIuUaJqllLkyQhcWz0Sit8g0GER/toFt2Rduhf0I6mtK/BJvdiHU5Za6b0t/LmM5jz8BrvOdnT6J68+879V3jPJrw9Ekmz62qvzCjVDYxLBYvGDWsMXU7DFRTcJnj2taM/B3ulrtxN1E2bhf/RtXTxoVBy5VoKrzi3uN05Mz3/hprY4GdON58=&lt;/diagram&gt;&lt;diagram name=&quot;stringjoin implementation hsm&quot; id=&quot;buWyz61NDm9p8K5mO10Q&quot;&gt;7Vpdc5s6EP01PMaDEGB4rJO0d+a2087NQ9unjgyyUYuRR5Zju7/+LiA+ZBGc2MZObm8eErRIi3X27J5FsYVvF9sPgiyTTzymqeXY8dbCd5bjIGT78Ce37ErL2A1Lw1ywWE1qDA/sN1VGW1nXLKYrbaLkPJVsqRsjnmU0kpqNCME3+rQZT/WnLsmcGoaHiKSm9SuLZVLvy25u/EXZPFGPDjx1Y0GqycqwSkjMNy0TvrfwreBclleL7S1Nc/AqXLxvD6kbf/48+fGVU87/+ZvKxU3p7P1LltRbEDST53XtlK4fSbpWeK2kYNn8J2eZ2rXcVVAKvs5imruzLTzZJEzShyWJ8rsbIA/YErlIYYTg8pEKySAM71I2z8AmeT5BPQ7u0e1efA5sDtWIA1UpX1ApdrBOeanppljqBGq8acW8CmTSCjcaKyNRPJvXvhss4ULB+QJosQEtX8vTMJ2xNL3lKRfFWjybzZwoAjvEjP+irTuxP/U9f0C8XUfHG3v2qKoULci7EHeGAtw1ACdnhTv2aBC7XXAHzhT7Q8Id7KHteCMbXxdtz0B7iHoBqiAJy6joDglFEJRxV0hCf4zJkCFB3l5MkGcGxO2qOGiokPhGSKb/1QQI3FE4vm4CIJPwNIbWQw25kAmf84yk9411osPfzPnIc7oXoP+kUu5UH0XWkushoVsmv+XLR54afW/dudsqz8VgVw0y2G9rUT783r7XLCtG1boZJJ/6IEEd23yPR0QWcOJrEdGeeSqekog57fVnd1NF0JRI9qh/urOHfXy47oEX6G7p4fwiq2XZ8s7YNifFPj1gIZN5NDx7yN7Jb9SkFphOOUdd5Wyw/AqPyK9oLR4L/NA10ktLribXXkd6BZdKr2LpOyHIrjVhCS8UctXy/CU3tEiIgXFO2PyMNUK6DSHfP+EBBQN7wP6+B7go99mwvAbseOJXFUXXcdvyJiuaxXBVvEfY0NxOppZ3Z2QJlAe5V2dUTxUBk/JWymi2FiyOS32iK/abTAtXOUdV2MCvN8mfBTTFk5RMaToh0a95Ua/0NxL4eYrbHaVLvfWrJ1q1Wh9mfdhb027skYsDX4tflSkvI7LBkht/5CPdcTAKQt0Nn81WVBo18AzsCAxybAiTxcmIgN9mx/dsNeoVn+cG9FQtsvtTMOjUJf+SfV99HPRmdAm9al0KX7UuYWTvN0fPUJJCKs6x6mKag4yyQv7XnM7M79ccTy9Y55Ec5I9c93qSE/ZLjnnK9rYkJzCz7hXIDMJHyMwJyoJeriunHSdokji0yFRvqQdV5om28jJnC8g8VDX7uT+i1Jbs7yu1jo2904rr8IUTuddsFY9JaNcf682ijf0DaV2MvlDBAK3inP4KPeSz0zu4anqbB/Smdv4Z6e0eTO9wT5NP7KQukOx2f5tEmUwgfG+7V3L7X8+7/wt8pr4Jhs2XLcqoNV9Zwff/Ag==&lt;/diagram&gt;&lt;diagram name=&quot;stringjoin implementation control flow pseudo-code&quot; id=&quot;91u7uzOCe2lnP24hcGRI&quot;&gt;7Zjfb5swEMf/GqTtYYgfCaGPbdpt0raHKZP2GBk4wK2DmbmEZH/9jmAINFGztEGZur6A/fX5zv7cQRwMd7pYf1IsT7/JCIThWNHacG8Nx7Fty6NbpWxqZTK6qoVE8Ugb7YQZ/w1atLS65BEUPUOUUiDP+2IoswxC7GlMKVn2zWIp+lFzlsCeMAuZ2Fd/8gjTdl/WbuAz8CTVof2xHliwxlgLRcoiWXYk985wp0pKrFuL9RREBa/hAt/jMv9q/5r68/t8My/c2ZcfH2pnH0+Z0m5BQYbnde3UrldMLDWvAhXPknvJM71r3DQolVxmEVTuLMO9KVOOMMtZWI2WVDykpbgQ1LOpuQKFnNJwLXiSkYayMtDhaAzWj/JzZHN2S5xKFeQCUG1onvbSlpuuUsfX/bKT8yaRaSfdjqdFpussaX3vWFJD4zwBrbuHVi7xZUxjLsRUCqm2c904jp0wJJ1yJh+gMxJ5gTf2BuQ9svq8236H90HcQ9Ee7dFmZ2UdjcGPRodY+07gekOyth+xdieWabmXxe3t4Q5eK+6Rc2VeTS6Lu3Hc4W04nqCwNxFfUTPBLZE9KV5mIXJJ73JLAaOfV8d6B+/pakxac1rR007ozhZVvrKgqF/i1gGpKDmGaRUAU16YBTIcKFLICqiSwTjOY6nmwDEFKo/rM8c5dd9g5lLhMHs+iQzbsrBM06RrBmvs0gpq04Dq4aGzokusM3hqnewfWKcxuR24dtlb2T67kpvn/j8ok+CtTJ79InnFZXKSx2O2f7OmrRSoY1NfdBKUGerPCD51mf7/KCDe+R7g1OeP+4dsZ3zokG1PDhz7WvGEcx91d18OtmOd7y/u3R8=&lt;/diagram&gt;&lt;diagram name=&quot;stringjoin implementation transition action  pseudo-code&quot; id=&quot;5hN4nWRIqbjRaZmRKSIH&quot;&gt;3VjRbpswFP0apO1hyBgI5LFJu+1lWqVO2rSXyoABtwQj45SkX7/rxBAItFnW0C59Cfbx9bV9zrVzbcOeL1ZfBCnSbzyimYFRtDLsSwNjy0IT+ChkvUU8Z7oFEsEibbQDbtgj1SDS6JJFtOwYSs4zyYouGPI8p6HsYEQIXnXNYp51Ry1IQnvATUiyPvqTRTJt1oV2DV8pS1I9tO/qhgWpjTVQpiTiVQuyrwx7LjiX29JiNaeZIq/m5fb3mn1P5lX5A99xcT1Dj78eP22dfT6mS7MEQXN5Wtd46/qBZEvNVykFy5M7znK9armuqRR8mUdUuUOGPatSJulNQULVWkHwAJbKRQY1C4oPVEgGMlxkLMkBk1wZ6OGgja729DmwOKthHEKV8gWVYg39tJcm3HSUYl/Xq5bmtZBpS2481SDRcZY0vndcQkHTeQS1do9avpQv4zRmWTbnGRebvnYcxzgMAQfN+D1ttUSTYOJORuTbQV2+m3qL70G6x2Lb6bFNTsp15FI/coa49nFgT8bk2trj2vaQiey3pdvt0R28V7odPDWn3tvSPenRbeBJBqPOIvYAxURuCOlB8TIPJeNwlCNBCfy7YvSBfoRfw2vMYULPO4EvWSi58qDcnuFoACorJsNUDSBTVpqlJHKkkUJSUqUFYfI25uKWMplSiI6LE49z7LqpWXAhx1nzUcyQDRfINE34zelKttkKtqYBxMN9a0ZvMc/guXmS/2Cehnc5cuySMw7bDVQWJB+F+n+L7voseCJ09ma7gQOxj7yzGAvOOMZeIZ6ePYUOxNM5h8lRHg/Z/vV5cXi3vSiL5LnUTxA+VIm+e2Y03vkeIWP03W6Cjt2hBN3yhlJG7DTZ5cnTxulQ2ngoNEqaRwBvLqtw2OJZ0NOkTEmhinC9z5TdQV0KKhgsSe2kutP1Dpp1Nd4TkYNXJhW1U9TXtOAlUxku1p0DtantS3tEueGye/DuOyS145muNZLS9fPHcVIrVc9XbRPh1xK8u78de0Bwd1Bwxz9acKju3hQ3ba2XWfvqDw==&lt;/diagram&gt;&lt;/mxfile&gt;" style="background-color: rgb(255, 255, 255);">
+  <defs/>
+  <g>
+    <rect x="12" y="0" width="530" height="230" fill="#dae8fc" stroke="#6c8ebf" stroke-dasharray="3 3" pointer-events="all"/>
+    <rect x="132" y="20" width="120" height="60" rx="9" ry="9" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(178.5,43.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="26" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 26px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">hello
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="13" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">hello
+	</text>
+      </switch>
+    </g>
+    <rect x="132" y="140" width="120" height="60" rx="9" ry="9" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(177.5,163.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="28" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 30px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">world
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="14" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">world
+	</text>
+      </switch>
+    </g>
+    <rect x="332" y="80" width="120" height="70" rx="10.5" ry="10.5" fill="#ffffff" stroke="#000000" pointer-events="all"/>
+    <g transform="translate(367.5,108.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="48" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 50px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">stringjoin
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="24" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">stringjoin
+	</text>
+      </switch>
+    </g>
+    <rect x="322" y="90" width="20" height="20" fill="#d5e8d4" stroke="#82b366" pointer-events="all"/>
+    <g transform="translate(328.5,93.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="6" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 8px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">a
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="3" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">a
+	</text>
+      </switch>
+    </g>
+    <rect x="322" y="120" width="20" height="20" fill="#d5e8d4" stroke="#82b366" pointer-events="all"/>
+    <g transform="translate(328.5,123.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="6" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 8px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">b
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="3" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">b
+	</text>
+      </switch>
+    </g>
+    <path d="M 262 50 L 292 50 L 292 100 L 315.63 100" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 320.88 100 L 313.88 103.5 L 315.63 100 L 313.88 96.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="242" y="40" width="20" height="20" fill="#fff2cc" stroke="#d6b656" pointer-events="all"/>
+    <g transform="translate(248.5,43.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="6" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 7px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">s
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="3" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">s
+	</text>
+      </switch>
+    </g>
+    <path d="M 262 170 L 292 170 L 292 130 L 315.63 130" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 320.88 130 L 313.88 133.5 L 315.63 130 L 313.88 126.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="242" y="160" width="20" height="20" fill="#fff2cc" stroke="#d6b656" pointer-events="all"/>
+    <g transform="translate(248.5,163.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="6" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 7px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">s
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="3" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">s
+	</text>
+      </switch>
+    </g>
+    <path d="M 462 115 L 525.63 115" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 530.88 115 L 523.88 118.5 L 525.63 115 L 523.88 111.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="442" y="105" width="20" height="20" fill="#fff2cc" stroke="#d6b656" pointer-events="all"/>
+    <g transform="translate(443.5,108.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="16" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 18px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">out
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="8" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">out
+	</text>
+      </switch>
+    </g>
+    <rect x="122" y="40" width="20" height="20" fill="#d5e8d4" stroke="#82b366" pointer-events="all"/>
+    <g transform="translate(119.5,43.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="24" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 24px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">start
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="12" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">start
+	</text>
+      </switch>
+    </g>
+    <rect x="122" y="160" width="20" height="20" fill="#d5e8d4" stroke="#82b366" pointer-events="all"/>
+    <g transform="translate(119.5,163.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="24" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 24px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">start
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="12" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">start
+	</text>
+      </switch>
+    </g>
+    <path d="M 22 110 L 72 110 L 72 50 L 115.63 50" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 120.88 50 L 113.88 53.5 L 115.63 50 L 113.88 46.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <path d="M 22 110 L 72 110 L 72 170 L 115.63 170" fill="none" stroke="#000000" stroke-miterlimit="10" pointer-events="stroke"/>
+    <path d="M 120.88 170 L 113.88 173.5 L 115.63 170 L 113.88 166.5 Z" fill="#000000" stroke="#000000" stroke-miterlimit="10" pointer-events="all"/>
+    <rect x="2" y="100" width="20" height="20" fill="#d5e8d4" stroke="#82b366" pointer-events="all"/>
+    <g transform="translate(-0.5,103.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="24" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 24px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">start
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="12" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">start
+	</text>
+      </switch>
+    </g>
+    <rect x="532" y="105" width="20" height="20" fill="#fff2cc" stroke="#d6b656" pointer-events="all"/>
+    <g transform="translate(533.5,108.5)">
+      <switch>
+	<foreignObject style="overflow:visible;" pointer-events="all" width="16" height="12" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+	  <div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 18px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+	    <div xmlns="http://www.w3.org/1999/xhtml" style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">out
+	    </div>
+	  </div>
+	</foreignObject>
+	<text x="8" y="12" fill="#000000" text-anchor="middle" font-size="12px" font-family="Helvetica">out
+	</text>
+      </switch>
+    </g>
+  </g>
+</svg>
