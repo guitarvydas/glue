@@ -5,17 +5,20 @@ SemanticsSCL {
   RuleName = letter1 letterRest*
   
   Parameters = parameter+
-  parameter = pname (ws+ | delimeter)
+  parameter = treeparameter | flatparameter
+  flatparameter = pname (ws+ | delimeter)
+  treeparameter = "@" flatparameter
+
   pname = letterRest letterRest*
-  Rewrites = rewriteName+
-  rewriteName = (singleRewrite | arrayRewrite) (ws+ | delimeter)
-  singleRewrite = "$" pname
-  arrayRewrite = "@" pname
+  Rewrites = jsstring
 
   letter1 = "a" .. "z" | "A" .. "Z"
   letterRest = "a" .. "z" | "A" .. "Z" | "0" .. "9"
 
   ws = "\n" | " " | "\t" | "," 
   delimeter = &"]" | &"="
+
+  jsstring = "`" stringchar* "`"
+  stringchar = ~"`" any
 
 }
