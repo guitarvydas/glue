@@ -1,0 +1,18 @@
+SVGSwitchAndForeign {
+  Svg = XMLHeader DOCTypeHeader SvgElement
+  XMLHeader = "<?" stuff* "?>" 
+  DOCTypeHeader = "<!DOCTYPE" stuff* ">"  
+  SvgElement = "<svg" attribute* ">" EmptyDefs Element+ "</svg>"
+  EmptyDefs = "<defs/>" 
+  Element = ElementWithSwitch | ElementWithForeign | ElementWithElements | ElementWithoutElements
+  ElementWithSwitch =  "<switch>" Element Element "</switch>"
+  ElementWithForeign = "<foreignObject" attribute* ">" Element "</foreignObject>"
+  ElementWithElements = "<" name stuff* ">" (Element+ | text*) "</" name ">"
+  ElementWithoutElements = "<" name stuff* "/>"
+  stuff = ~">" ~"/>" ~"<" ~"?>" any
+  text = stuff
+  attribute = stuff
+  name = name1st nameFollow*
+  name1st = "a" .. "z" | "A" .. "Z"
+  nameFollow = "0" .. "9" | name1st
+}
