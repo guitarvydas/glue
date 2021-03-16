@@ -1,0 +1,16 @@
+Svg [xmlHeader docTypeHeader svgElement] = ${xmlHeader}${docTypeHeader}${svgElement}
+XMLHeader [_begin @characters _end] = ${_begin}${characters}${_end}
+DOCTypeHeader [_begin @characters _end] = ${_begin}${characters}${_end}
+SvgElement [_begin @attributes _gt emptyDefs @elements _end] = ${_begin}${attributes}${_gt}${emptyDefs}${elements}${_end}
+EmptyDefs [_] = ${_}
+Element [e] = ${e}
+ElementWithSwitch [_switch e1 e2 _endswitch] = ${_switch}${e1}${e2}${_endswitch}
+ElementWithForeign [_foreign @attributes _gt e _endforeign] = ${_foreign}${attributes}${_gt}${e}${_endforeign}
+ElementWithElements [_begin name @attributes _gt @e _end1 name _end2] = ${_begin}${name}${attributes}${_gt}${e}${_end1}${name}${_end2}
+ElementWithoutElements [_begin name @attributes _end] = ${_begin}${name}${attributes}${_end}
+stuff [c] = ${c}
+text [c] = ${c}
+attribute [c] = ${c}
+name [c1 @cRest] = ${c1}${cRest}
+name1st [c] = ${c}
+nameFollow [c] = ${c}
