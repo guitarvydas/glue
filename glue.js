@@ -22,30 +22,29 @@ function getNamedFile (fname) {
 }
 
 function addSemantics (sem) {
-    sem.addSemantics ({
-	'_glue',
-	Semantics = function (_1s) {},
-	SemanticsStatement = function (_1, _2, _3, _4, _5, _6) {},
-	RuleName = function (_1, _2s) {},
-	Parameters = function (_1s) {},
-	Parameter = function (_1) {},
-	flatparameter = function (_1) {},
-	fpws = function (_1, _2s) {},
-	fpd = function (_1, _2) {},
-	treeparameter = function (_1, _2) {},
+    sem.addOperation ('_glue', {
+	Semantics: function (_1s) {},
+	SemanticsStatement: function (_1, _2, _3, _4, _5, _6) {},
+	RuleName: function (_1, _2s) {},
+	Parameters: function (_1s) {},
+	Parameter: function (_1) {},
+	flatparameter: function (_1) {},
+	fpws: function (_1, _2s) {},
+	fpd: function (_1, _2) {},
+	treeparameter: function (_1, _2) {},
 
-	pname = function (_1, _2s) {},
-	Rewrites = function (_1) {},
-	letter1 = function (_1) {},
-	letterRest = function (_1) {},
+	pname: function (_1, _2s) {},
+	Rewrites: function (_1) {},
+	letter1: function (_1) {},
+	letterRest: function (_1) {},
 
-	ws = function (_1) {},
-	delimiter = function () {},
+	ws: function (_1) {},
+	delimiter: function () {},
 
-	rwstring = function (_1s) {},
-	stringchar = function (_1) {},
+	rwstring: function (_1s) {},
+	stringchar: function (_1) {},
 
-	_terminal = function () { return this.primitiveValue; }
+	_terminal: function () { return this.primitiveValue; }
     });
 }
 
