@@ -23,26 +23,38 @@ function getNamedFile (fname) {
 
 function addSemantics (sem) {
     sem.addOperation ('_glue', {
-	Semantics: function (_1s) {},
-	SemanticsStatement: function (_1, _2, _3, _4, _5, _6) {},
-	RuleName: function (_1, _2s) {},
-	Parameters: function (_1s) {},
-	Parameter: function (_1) {},
-	flatparameter: function (_1) {},
-	fpws: function (_1, _2s) {},
-	fpd: function (_1, _2) {},
-	treeparameter: function (_1, _2) {},
+	
+	Semantics: function (_1s) { var __1 = _1s._glue ().join ('\n'); },
+	SemanticsStatement: function (_1, _2, _3, _4, _5, _6) {
+	    var __1 = _1.glue ();
+	    var __2 = _2.glue ();
+	    var __3 = _3.glue ();
+	    var __4 = _4.glue ();
+	    var __5 = _5.glue ();
+	    var __6 = _6.glue ();
+	    return `
+               ${__2} : function (${__4}) = { return \`${__6}\`; },
+            `;
+	},
+	RuleName: function (_1, _2s) { var __1 = _1._glue (); var __2 = _2._glue ().join (''); return __1 + __2; },
+	Parameters: function (_1s) {  var __1 = _1s._glue ().join ('\n'); return __1; },
+	
+	Parameter: function (_1) { var __1 = _1._glue ();  },
+	flatparameter: function (_1) { var __1 = _1._glue (); parameterNameStack.push (`_${__1}`); return `var _${__1} = ${__1}._glue ();` },
+	fpws: function (_1, _2s) { var __1 = _1._glue (); var __2 = _2s._glue ().join (''); return __1; },
+	fpd: function (_1, _2) { var __1 = _1._glue (); var __2 = _2._glue (); return __1; },
+	treeparameter: function (_1, _2) { var __1 = _1._glue; parameterNameStack.push (`_${__1}`); return `var _${__1} = ${__1}._glue ().join ('')`; },
 
 	pname: function (_1, _2s) {},
-	Rewrites: function (_1) {},
-	letter1: function (_1) {},
-	letterRest: function (_1) {},
+	Rewrites: function (_1) { var __1 = _1._glue (); return __1; },
+	letter1: function (_1) { var __1 = _1._glue (); return __1; },
+	letterRest: function (_1) { var __1 = _1._glue (); return __1; },
 
-	ws: function (_1) {},
-	delimiter: function () {},
+	ws: function (_1) { var __1 = _1._glue (); return __1; },
+	delimiter: function () { return ""; },
 
-	rwstring: function (_1s) {},
-	stringchar: function (_1) {},
+	rwstring: function (_1s) { var __1 = _1._glue (); return __1; },
+	stringchar: function (_1) { var __1 = _1._glue (); return __1; },
 
 	_terminal: function () { return this.primitiveValue; }
     });
