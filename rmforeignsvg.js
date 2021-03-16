@@ -80,7 +80,7 @@ var e1 = _e1._glue ();
 var e2 = _e2._glue ();
 var _endswitch = __endswitch._glue ();
 var _ws = __ws._glue ().join ('');
-                          return `${_switch}${_ws1}${e1}${e2}${_endswitch}${_ws}`; 
+                          return `${e2}`; 
                         },
             
                elementWithForeign : function (__foreign,_attributes,__gt,__ws1,_e,__endforeign,__ws) { 
