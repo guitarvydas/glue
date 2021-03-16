@@ -22,6 +22,7 @@ function getNamedFile (fname) {
 }
 
 
+
 function main () {
     // usage: node rmforeignsvg.js <file
     // reads grammar from "svg.ohm" 
