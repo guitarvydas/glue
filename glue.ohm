@@ -9,7 +9,10 @@ SemanticsSCL {
   flatparameter = fpws | fpd
   fpws = pname ws+
   fpd = pname delimiter
-  treeparameter = "@" flatparameter
+  treeparameter = "@" tflatparameter
+  tflatparameter = tfpws | tfpd
+  tfpws = pname ws+
+  tfpd = pname delimiter
 
   pname = letterRest letterRest*
   Rewrites = rwstring
