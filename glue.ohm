@@ -4,21 +4,21 @@ SemanticsSCL {
 
   RuleName = letter1 letterRest*
   
-  Parameters = parameter+
-  parameter = treeparameter | flatparameter
+  Parameters = Parameter+
+  Parameter = treeparameter | flatparameter
   flatparameter = pname (ws+ | delimeter)
   treeparameter = "@" flatparameter
 
   pname = letterRest letterRest*
-  Rewrites = jsstring
+  Rewrites = rwstring
 
-  letter1 = "a" .. "z" | "A" .. "Z"
-  letterRest = "a" .. "z" | "A" .. "Z" | "0" .. "9"
+  letter1 = "_" | "a" .. "z" | "A" .. "Z"
+  letterRest = "0" .. "9" | letter1
 
   ws = "\n" | " " | "\t" | "," 
   delimeter = &"]" | &"="
 
-  jsstring = "`" stringchar* "`"
-  stringchar = ~"`" any
+  rwstring = stringchar*
+  stringchar = ~"\n" any
 
 }
