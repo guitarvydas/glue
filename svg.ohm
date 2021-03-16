@@ -1,18 +1,20 @@
 SVGSwitchAndForeign {
-  Svg = XMLHeader DOCTypeHeader SvgElement
-  XMLHeader = "<?" stuff* "?>" 
-  DOCTypeHeader = "<!DOCTYPE" stuff* ">"  
-  SvgElement = "<svg" attribute* ">" EmptyDefs Element+ "</svg>"
-  EmptyDefs = "<defs/>" 
-  Element = ElementWithSwitch | ElementWithForeign | ElementWithElements | ElementWithoutElements
-  ElementWithSwitch =  "<switch>" Element Element "</switch>"
-  ElementWithForeign = "<foreignObject" attribute* ">" Element "</foreignObject>"
-  ElementWithElements = "<" name stuff* ">" (Element+ | text*) "</" name ">"
-  ElementWithoutElements = "<" name stuff* "/>"
+  svg = xmlHeader docTypeHeader svgElement
+  xmlHeader = "<?" stuff* "?>" ws* 
+  docTypeHeader = "<!DOCTYPE" stuff* ">" ws* 
+  svgElement = "<svg" attribute* ">" ws* emptyDefs element+ "</svg>" ws*
+  emptyDefs = "<defs/>" ws*
+  element = (elementWithSwitch | elementWithForeign | elementWithelements | elementWithoutelements) ws*
+  elementWithSwitch =  "<switch>" ws* element element "</switch>" ws*
+  elementWithForeign = "<foreignObject" attribute* ">" ws* element "</foreignObject>" ws*
+  elementWithelements = "<" name stuff* ">" ws* (element+ | text*) "</" name ">" ws*
+  elementWithoutelements = "<" name stuff* "/>"
   stuff = ~">" ~"/>" ~"<" ~"?>" any
   text = stuff
   attribute = stuff
   name = name1st nameFollow*
   name1st = "a" .. "z" | "A" .. "Z"
   nameFollow = "0" .. "9" | name1st
+
+  ws = " " | "\n" | "\t"
 }
