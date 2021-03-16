@@ -3,9 +3,9 @@
 function ohm_parse (grammar, text) {
     var ohm = require ('ohm-js');
     var parser = ohm.grammar (grammar);
-    var result = parser.match (text);
-    if (result.succeeded ()) {
-	return result.succeeded ();
+    var cst = parser.match (text);
+    if (cst.succeeded ()) {
+	return { parser: parser, cst: cst };
     } else {
 	console.log (parser.trace (text).toString ());
 	throw "Ohm matching failed";
@@ -51,7 +51,7 @@ function addSemantics (sem) {
 	letterRest: function (_1) { var __1 = _1._glue (); return __1; },
 
 	ws: function (_1) { var __1 = _1._glue (); return __1; },
-	delimiter: function () { return ""; },
+	delimiter: function (_1) { return ""; },
 
 	rwstring: function (_1s) { var __1 = _1._glue (); return __1; },
 	stringchar: function (_1) { var __1 = _1._glue (); return __1; },
@@ -65,10 +65,15 @@ function main () {
     // reads grammar from "glue.ohm" 
     var text = getNamedFile ("-");
     var grammar = getNamedFile ("glue.ohm");
-    var parsed = ohm_parse (grammar, text);
-    return parsed;
+    var { parser, cst } = ohm_parse (grammar, text);
+    var sem = {};
+    if (cst.succeeded ()) {
+	sem = parser.createSemantics ();
+	addSemantics (sem);
+    }
+    return {cst: cst, semantics: sem};
 }
 
 
-var result = main ();
-console.log(result);
+var { cst, semantics } = main ();
+console.log(cst.succeeded ());

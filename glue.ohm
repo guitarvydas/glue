@@ -8,7 +8,7 @@ SemanticsSCL {
   Parameter = treeparameter | flatparameter
   flatparameter = fpws | fpd
   fpws = pname ws+
-  fpd = pname delimeter
+  fpd = pname delimiter
   treeparameter = "@" flatparameter
 
   pname = letterRest letterRest*
@@ -18,7 +18,7 @@ SemanticsSCL {
   letterRest = "0" .. "9" | letter1
 
   ws = "\n" | " " | "\t" | "," 
-  delimeter = &"]" | &"="
+  delimiter = &"]" | &"="
 
   rwstring = stringchar*
   stringchar = ~"\n" any
