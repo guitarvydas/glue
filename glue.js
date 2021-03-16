@@ -21,31 +21,59 @@ function getNamedFile (fname) {
     }	
 }
 
+var varNameStack = [];
+
 function addSemantics (sem) {
     sem.addOperation ('_glue', {
 	
-	Semantics: function (_1s) { var __1 = _1s._glue ().join ('\n'); },
+	Semantics: function (_1s) { 
+	    var __1 = _1s._glue ().join (''); 
+	    return `sem.addOperation ('_glue', {${__1}});`; 
+	},
 	SemanticsStatement: function (_1, _2, _3, _4, _5, _6) {
-	    var __1 = _1.glue ();
-	    var __2 = _2.glue ();
-	    var __3 = _3.glue ();
-	    var __4 = _4.glue ();
-	    var __5 = _5.glue ();
-	    var __6 = _6.glue ();
+	    varNameStack = [];
+	    var __1 = _1._glue ();
+	    var __2 = _2._glue ();
+	    var __3 = _3._glue ();
+	    var __4 = _4._glue ();
+	    var __5 = _5._glue ();
+	    var __6 = _6._glue ();
 	    return `
-               ${__2} : function (${__4}) = { return \`${__6}\`; },
+               ${__1} : function (${__3}) { 
+                          ${varNameStack.join ('\n')}
+                          return \`${__6}\`; 
+                        },
             `;
 	},
-	RuleName: function (_1, _2s) { var __1 = _1._glue (); var __2 = _2._glue ().join (''); return __1 + __2; },
-	Parameters: function (_1s) {  var __1 = _1s._glue ().join ('\n'); return __1; },
+	RuleName: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1 + __2s; },
+	Parameters: function (_1s) {  var __1s = _1s._glue ().join (','); return __1s; },
 	
-	Parameter: function (_1) { var __1 = _1._glue ();  },
-	flatparameter: function (_1) { var __1 = _1._glue (); parameterNameStack.push (`_${__1}`); return `var _${__1} = ${__1}._glue ();` },
-	fpws: function (_1, _2s) { var __1 = _1._glue (); var __2 = _2s._glue ().join (''); return __1; },
+	Parameter: function (_1) { 
+	    var __1 = _1._glue ();
+	    return `${__1}`;
+	},
+	flatparameter: function (_1) { 
+	    var __1 = _1._glue (); 
+	    varNameStack.push (`var ${__1} = _${__1}._glue ();`);
+	    return `_${__1}`;
+	},
+	fpws: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1; },
 	fpd: function (_1, _2) { var __1 = _1._glue (); var __2 = _2._glue (); return __1; },
-	treeparameter: function (_1, _2) { var __1 = _1._glue; parameterNameStack.push (`_${__1}`); return `var _${__1} = ${__1}._glue ().join ('')`; },
+	
+	treeparameter: function (_1, _2) { 
+	    var __1 = _1._glue (); 
+	    var __2 = _2._glue (); 
+	    varNameStack.push (`var ${__2} = _${__2}._glue ().join ('');`);
+	    return `_${__2}`; 
+	},
+	tflatparameter: function (_1) { 
+	    var __1 = _1._glue (); 
+	    return `${__1}`;
+	},
+	tfpws: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1; },
+	tfpd: function (_1, _2) { var __1 = _1._glue (); var __2 = _2._glue (); return __1; },
 
-	pname: function (_1, _2s) {},
+	pname: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1 + __2s;},
 	Rewrites: function (_1) { var __1 = _1._glue (); return __1; },
 	letter1: function (_1) { var __1 = _1._glue (); return __1; },
 	letterRest: function (_1) { var __1 = _1._glue (); return __1; },
@@ -53,7 +81,7 @@ function addSemantics (sem) {
 	ws: function (_1) { var __1 = _1._glue (); return __1; },
 	delimiter: function (_1) { return ""; },
 
-	rwstring: function (_1s) { var __1 = _1._glue (); return __1; },
+	rwstring: function (_1s) { var __1s = _1s._glue ().join (''); return __1s; },
 	stringchar: function (_1) { var __1 = _1._glue (); return __1; },
 
 	_terminal: function () { return this.primitiveValue; }
@@ -67,13 +95,15 @@ function main () {
     var grammar = getNamedFile ("glue.ohm");
     var { parser, cst } = ohm_parse (grammar, text);
     var sem = {};
+    var outputString = "";
     if (cst.succeeded ()) {
 	sem = parser.createSemantics ();
 	addSemantics (sem);
+	outputString = sem (cst)._glue ();
     }
-    return {cst: cst, semantics: sem};
+    return { cst: cst, semantics: sem, resultString: outputString };
 }
 
 
-var { cst, semantics } = main ();
-console.log(cst.succeeded ());
+var { cst, semantics, resultString } = main ();
+console.log(resultString);
