@@ -6,7 +6,9 @@ SemanticsSCL {
   
   Parameters = Parameter+
   Parameter = treeparameter | flatparameter
-  flatparameter = pname (ws+ | delimeter)
+  flatparameter = fpws | fpd
+  fpws = pname ws+
+  fpd = pname delimeter
   treeparameter = "@" flatparameter
 
   pname = letterRest letterRest*
