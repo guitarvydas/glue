@@ -1,0 +1,16 @@
+  Svg [a b c] = ${a}${b}${c}
+  XMLHeader [a @b c] = ${a}${b}${c}
+  DOCTypeHeader [a @b c] = ${a}${b}${c}
+  SvgElement [a @b c d @e f] = ${a}${b}${c}${d}${e}${f}
+  EmptyDefs [a] = ${a}
+  Element [a] = ${a}
+  ElementWithSwitch [a b c d] = ${a}${b}${c}${d}
+  ElementWithForeign [a @b c d e] = ${a}${b}${c}${d}${e}
+  ElementWithElements [a b @c d @e f g h] = ${a}${b}${c}${d}${e}${f}${g}${h}
+  ElementWithoutElements [a b @c d] = ${a}${b}${c}${d}
+  stuff [a] = ${a}
+  text [a] = ${a}
+  attribute [a] = ${a}
+  name [a @b] = ${a}${b}
+  name1st [a] = ${a}
+  nameFollow [a] = ${a}

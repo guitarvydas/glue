@@ -1,38 +1,29 @@
-SVGSwitchAndForeign {
-  Svg = XMLHeader DOCTypeHeader SvgElement
-  XMLHeader = "<?" stuff* "?>" 
-  DOCTypeHeader = "<!DOCTYPE" stuff* ">"  
-  SvgElement = "<svg" attribute* ">" EmptyDefs Element+ "</svg>"
-  EmptyDefs = "<defs/>" 
-  Element = ElementWithSwitch | ElementWithForeign | ElementWithElements | ElementWithoutElements
-  ElementWithSwitch =  "<switch>" Element Element "</switch>"
-  ElementWithForeign = "<foreignObject" attribute* ">" Element "</foreignObject>"
-  ElementWithElements = "<" name stuff* ">" (Element+ | text*) "</" name ">"
-  ElementWithoutElements = "<" name stuff* "/>"
-  stuff = ~">" ~"/>" ~"<" ~"?>" any
-  text = stuff
-  attribute = stuff
-  name = name1st nameFollow*
-  name1st = "a" .. "z" | "A" .. "Z"
-  nameFollow = "0" .. "9" | name1st
-}
+SemanticsSCL {
+  Semantics = SemanticsStatement+
+  SemanticsStatement = RuleName "[" Parameters "]" "=" Rewrites
 
-{
-  Svg [1,2,3] = $1 $2 $3
-  XMLHeader [1,2s,3] = $1 @2s $3
-  DOCTypeHeader [1,2s,3] = $1 @2s $3
-  SvgElement [1,2s,3,4,5+,6] = $1 $2 $3 $4 @5s $6
-  EmptyDefs [1] = $1
-  Element [1] = $1
-  ElementWithSwitch [1,2,3,4] = $1 $2 $3 $4
-  ElementWithForeign [1,2s,3,4,5] = $1 @2 $3 $4 $5
-  ElementWithElements [1,2,3s,4,5s,6,7,8]
-  ElementWithoutElements [1,2,3s,4]
-  stuff [1]
-  text [1]
-  attribute [1]
-  name [1,2s]
-  name1st [1]
-  nameFollow [1]
-}
+  RuleName = letter1 letterRest*
   
+  Parameters = Parameter+
+  Parameter = treeparameter | flatparameter
+  flatparameter = fpws | fpd
+  fpws = pname ws+
+  fpd = pname delimiter
+  treeparameter = "@" tflatparameter
+  tflatparameter = tfpws | tfpd
+  tfpws = pname ws+
+  tfpd = pname delimiter
+
+  pname = letterRest letterRest*
+  Rewrites = rwstring
+
+  letter1 = "_" | "a" .. "z" | "A" .. "Z"
+  letterRest = "0" .. "9" | letter1
+
+  ws = "\n" | " " | "\t" | "," 
+  delimiter = &"]" | &"="
+
+  rwstring = stringchar*
+  stringchar = ~"\n" any
+
+}
