@@ -1,0 +1,18 @@
+svg [xmlHeader docTypeHeader svgElement] = ${xmlHeader}${docTypeHeader}${svgElement}
+xmlHeader [_begin @characters _end @_ws] = ${_begin}${characters}${_end}${_ws}
+docTypeHeader [_begin @characters _end @_ws] = ${_begin}${characters}${_end}${_ws}
+svgElement [_begin @attributes _gt @_ws1 emptyDefs @elements _end @_ws] = ${_begin}${attributes}${_gt}${_ws1}${emptyDefs}${elements}${_end}${_ws}
+emptyDefs [_ @_ws] = ${_}${_ws}
+element [e @_ws] = ${e}${_ws}
+elementWithSwitch [_switch @_ws1 e1 e2 _endswitch @_ws] = ${e2}
+elementWithForeign [_foreign @attributes _gt @_ws1 e _endforeign @_ws] = ${_foreign}${attributes}${_gt}${_ws1}${e}${_endforeign}${_ws}
+elementWithelements [_begin name @attributes _gt @_ws1 @e _end1 name _end2 @_ws] = ${_begin}${name}${attributes}${_gt}${_ws1}${e}${_end1}${name}${_end2}${_ws}
+elementWithoutelements [_begin name @attributes _end] = ${_begin}${name}${attributes}${_end}
+stuff [c] = ${c}
+text [c] = ${c}
+attribute [c] = ${c}
+name [c1 @cRest] = ${c1}${cRest}
+name1st [c] = ${c}
+nameFollow [c] = ${c}
+
+ws [c] = ${c}

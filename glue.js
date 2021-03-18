@@ -28,7 +28,15 @@ function addSemantics (sem) {
 	
 	Semantics: function (_1s) { 
 	    var __1 = _1s._glue ().join (''); 
-	    return `sem.addOperation ('_glue', {${__1}});`; 
+	    return `
+function addSemantics (sem) { 
+  sem.addOperation (
+'_glue', 
+{
+${__1}
+_terminal: function () { return this.primitiveValue; }
+}); 
+}`; 
 	},
 	SemanticsStatement: function (_1, _2, _3, _4, _5, _6) {
 	    varNameStack = [];
