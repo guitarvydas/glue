@@ -4,7 +4,7 @@ const grammar =
       `
 SemanticsSCL {
   Semantics = SemanticsStatement+
-  SemanticsStatement = RuleName "[" Parameters "]" "=" Rewrites
+  SemanticsStatement = RuleName "[" Parameters "]" "=" code? rewrites
 
   RuleName = letter1 letterRest*
   
@@ -19,7 +19,9 @@ SemanticsSCL {
   tfpd = pname delimiter
 
   pname = letterRest letterRest*
-  Rewrites = rwstring
+  rewrites = rw1 | rw2
+  rw1 = "[[" rwstringWithNewlines "]]"
+  rw2 = rwstring
 
   letter1 = "_" | "a" .. "z" | "A" .. "Z"
   letterRest = "0" .. "9" | letter1
@@ -29,6 +31,12 @@ SemanticsSCL {
 
   rwstring = stringchar*
   stringchar = ~"\\n" any
+
+  rwstringWithNewlines = nlstringchar*
+  nlstringchar = ~"]]" ~"}}" any
+
+  code = "{{" codeString "}}"
+  codeString = rwstringWithNewlines
 
 }
 `;
@@ -72,18 +80,20 @@ _terminal: function () { return this.primitiveValue; }
 }); 
 }`; 
 	},
-	SemanticsStatement: function (_1, _2, _3, _4, _5, _6) {
+	SemanticsStatement: function (_1, _2, _3, _4, _5, _6s, _7) {
 	    varNameStack = [];
 	    var __1 = _1._glue ();
 	    var __2 = _2._glue ();
 	    var __3 = _3._glue ();
 	    var __4 = _4._glue ();
 	    var __5 = _5._glue ();
-	    var __6 = _6._glue ();
+	    var __6s = _6s._glue ().join ('');
+	    var __7 = _7._glue ();
 	    return `
                ${__1} : function (${__3}) { 
+                          ${__6s}
                           ${varNameStack.join ('\n')}
-                          return \`${__6}\`; 
+                          return \`${__7}\`; 
                         },
             `;
 	},
@@ -116,7 +126,9 @@ _terminal: function () { return this.primitiveValue; }
 	tfpd: function (_1, _2) { var __1 = _1._glue (); var __2 = _2._glue (); return __1; },
 
 	pname: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1 + __2s;},
-	Rewrites: function (_1) { var __1 = _1._glue (); return __1; },
+	rewrites: function (_1) { var __1 = _1._glue (); return __1; },
+	rw1: function (_1, _2, _3) { var __2 = _2._glue (); return __2; },
+	rw2: function (_1) { var __1 = _1._glue (); return __1; },
 	letter1: function (_1) { var __1 = _1._glue (); return __1; },
 	letterRest: function (_1) { var __1 = _1._glue (); return __1; },
 
@@ -125,6 +137,11 @@ _terminal: function () { return this.primitiveValue; }
 
 	rwstring: function (_1s) { var __1s = _1s._glue ().join (''); return __1s; },
 	stringchar: function (_1) { var __1 = _1._glue (); return __1; },
+	rwstringWithNewlines: function (_1s) { var __1s = _1s._glue ().join (''); return __1s; },
+	nlstringchar: function (_1) { var __1 = _1._glue (); return __1; },
+
+	code: function (_1, _2, _3) { return _2._glue (); },
+	codeString: function (_1) { return _1._glue (); },
 
 	_terminal: function () { return this.primitiveValue; }
     });
