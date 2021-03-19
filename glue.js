@@ -1,5 +1,39 @@
 // npm install ohm-js
 
+const grammar =
+      `
+SemanticsSCL {
+  Semantics = SemanticsStatement+
+  SemanticsStatement = RuleName "[" Parameters "]" "=" Rewrites
+
+  RuleName = letter1 letterRest*
+  
+  Parameters = Parameter*
+  Parameter = treeparameter | flatparameter
+  flatparameter = fpws | fpd
+  fpws = pname ws+
+  fpd = pname delimiter
+  treeparameter = "@" tflatparameter
+  tflatparameter = tfpws | tfpd
+  tfpws = pname ws+
+  tfpd = pname delimiter
+
+  pname = letterRest letterRest*
+  Rewrites = rwstring
+
+  letter1 = "_" | "a" .. "z" | "A" .. "Z"
+  letterRest = "0" .. "9" | letter1
+
+  ws = "\\n" | " " | "\\t" | "," 
+  delimiter = &"]" | &"="
+
+  rwstring = stringchar*
+  stringchar = ~"\\n" any
+
+}
+`;
+
+
 function ohm_parse (grammar, text) {
     var ohm = require ('ohm-js');
     var parser = ohm.grammar (grammar);
@@ -8,7 +42,7 @@ function ohm_parse (grammar, text) {
 	return { parser: parser, cst: cst };
     } else {
 	console.log (parser.trace (text).toString ());
-	throw "Ohm matching failed";
+	throw "glue: Ohm matching failed";
     }
 }
 
@@ -100,7 +134,7 @@ function main () {
     // usage: node glue <file
     // reads grammar from "glue.ohm" 
     var text = getNamedFile ("-");
-    var grammar = getNamedFile ("glue.ohm");
+    //xvar grammar = getNamedFile ("glue.ohm");
     var { parser, cst } = ohm_parse (grammar, text);
     var sem = {};
     var outputString = "";
