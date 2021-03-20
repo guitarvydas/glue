@@ -1,4 +1,5 @@
 // npm install ohm-js
+'use strict';
 
 const grammar =
       `
@@ -34,7 +35,6 @@ SemanticsSCL {
 
   rwstringWithNewlines = nlstringchar*
   nlstringchar = ~"]]" ~"}}" any
-
   code = "{{" codeString "}}"
   codeString = rwstringWithNewlines
 
@@ -91,8 +91,10 @@ _terminal: function () { return this.primitiveValue; }
 	    var __7 = _7._glue ();
 	    return `
                ${__1} : function (${__3}) { 
+                          _glueDynamicScope.push ("${__1}");
                           ${__6s}
                           ${varNameStack.join ('\n')}
+                          _glueDynamicScope.pop ();
                           return \`${__7}\`; 
                         },
             `;
@@ -151,7 +153,6 @@ function main () {
     // usage: node glue <file
     // reads grammar from "glue.ohm" 
     var text = getNamedFile ("-");
-    //xvar grammar = getNamedFile ("glue.ohm");
     var { parser, cst } = ohm_parse (grammar, text);
     var sem = {};
     var outputString = "";
@@ -165,4 +166,38 @@ function main () {
 
 
 var { cst, semantics, resultString } = main ();
-console.log(resultString);
+console.log(`'use strict'`);
+console.log (`
+function scope () {
+    this._stack = [];
+    this._namestack = [];
+    this._topindex = -1;
+    this._getIndex = function () { 
+      if (this._topindex != (this._stack.length - 1)) {
+        throw "glue: internal index error";
+      };
+      return this._topindex; 
+    };
+    this.put = function (key, val) {
+	var i = this._getIndex ();
+	this._stack[i][key] = val;
+    };
+    this.get = function (key) {
+	var i = this._getIndex ();
+	while (i >= 0) {
+	    if (this._stack[i][key]) {
+		return this._stack[i][key];
+	    };
+	    i -= 1;
+	};
+        console.log (this._stack);
+        console.log (this._namestack);
+        console.log (this._getIndex ());
+	throw "scope: key [" + key.toString () +  "] not found";
+    };
+    this.push = function (name) { this._topindex += 1; this._namestack.push (name); this._stack.push ([]); };
+    this.pop = function () { /*console.log ("pop " + this._namestack.toString ());*/ this._stack.pop (); this._namestack.pop (); this._topindex -= 1;};
+};
+var _glueDynamicScope = new scope ();
+`);
+console.log (resultString);
