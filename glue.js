@@ -91,10 +91,10 @@ _terminal: function () { return this.primitiveValue; }
 	    var __7 = _7._glue ();
 	    return `
                ${__1} : function (${__3}) { 
-                          _glueDynamicScope.push ("${__1}");
+                          _ruleEnter ("${__1}");
                           ${__6s}
                           ${varNameStack.join ('\n')}
-                          _glueDynamicScope.pop ();
+                          _ruleExit ("${__1}");
                           return \`${__7}\`; 
                         },
             `;
@@ -167,37 +167,53 @@ function main () {
 
 var { cst, semantics, resultString } = main ();
 console.log(`'use strict'`);
-console.log (`
-function scope () {
+console.log(`
+var _scope;
+
+function scopeStack () {
     this._stack = [];
-    this._namestack = [];
-    this._topindex = -1;
-    this._getIndex = function () { 
-      if (this._topindex != (this._stack.length - 1)) {
-        throw "glue: internal index error";
-      };
-      return this._topindex; 
+    this.pushNew = function () {this._stack.push ([])};
+    this.pop = function () {this._stack.pop ()};
+    this._topIndex = function () {return this._stack.length - 1;};
+    this._top = function () { return this._stack[this._topIndex ()]; };
+    this.scopeAdd = function (key, val) {
+	this._top ().push ({key: key, val: val});
     };
-    this.put = function (key, val) {
-	var i = this._getIndex ();
-	this._stack[i][key] = val;
-    };
-    this.get = function (key) {
-	var i = this._getIndex ();
-	while (i >= 0) {
-	    if (this._stack[i][key]) {
-		return this._stack[i][key];
+    this._lookup = function (key, a) { 
+      return a.find (obj => {return obj && obj.key && (obj.key == key)}); };
+    this.scopeGet = function (key) {
+	var i = this._topIndex ();
+	for (; i > 0 ; i -= 1) {
+	    var obj = this._lookup (key, this._stack [i]);
+	    if (obj) {
+		return obj.val;
 	    };
-	    i -= 1;
 	};
-        console.log (this._stack);
-        console.log (this._namestack);
-        console.log (this._getIndex ());
-	throw "scope: key [" + key.toString () +  "] not found";
+	console.log (this._stack);
+	console.log (key);
+	throw "scopeGet internal error";
     };
-    this.push = function (name) { this._topindex += 1; this._namestack.push (name); this._stack.push ([]); };
-    this.pop = function () { /*console.log ("pop " + this._namestack.toString ());*/ this._stack.pop (); this._namestack.pop (); this._topindex -= 1;};
-};
-var _glueDynamicScope = new scope ();
+}
+
+function scopeAdd (key, val) {
+  return _scope.scopeAdd (key, val);
+}
+
+function scopeGet (key, val) {
+  return _scope.scopeGet (key, val);
+}
+
+function _ruleInit () {
+    _scope = new scopeStack ();
+}
+
+function _ruleEnter (ruleName) {
+    _scope.pushNew ();
+}
+
+function _ruleExit (ruleName) {
+    _scope.pop ();
+}
 `);
+console.log('_ruleInit ();');
 console.log (resultString);
