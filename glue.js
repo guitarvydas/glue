@@ -193,10 +193,27 @@ function scopeStack () {
 	console.log (key);
 	throw "scopeGet internal error";
     };
+    this.scopeModify = function (key, val) {
+	var i = this._topIndex ();
+	for (; i > 0 ; i -= 1) {
+	    var obj = this._lookup (key, this._stack [i]);
+	    if (obj) {
+              obj.val = val;
+              return val;
+	    };
+	};
+	console.log (this._stack);
+	console.log (key);
+	throw "scopeModify internal error";
+    };
 }
 
 function scopeAdd (key, val) {
   return _scope.scopeAdd (key, val);
+}
+
+function scopeModify (key, val) {
+  return _scope.scopeModify (key, val);
 }
 
 function scopeGet (key, val) {
