@@ -1,0 +1,25 @@
+semantics [@ws @specs] = ${ws}${specs}
+semanticsStatement [name @ws1 _lb @ws2 params _rb @ws3 _eq @ws4 code rewrites @ws5] =
+		   ${name}${ws1}${_lb}${ws2}${params}${_rb}${ws3}${_eq}${ws4}${code}${rewrites}${ws5}
+ruleName [c @cs] = ${c}${cs}
+parameters [@p] = ${p}
+parameter [p] = ${p}
+fpws [name @ws] = ${name}${ws}
+fpd [name delim] = ${name}${delim}
+treeparameter [_at flatp] = ${_at}${flatp}
+tflatparameter [tp] = ${tp}
+tfpws [name @ws] = ${name}${ws}
+tfpd [name delim] = ${name}${delim}
+pname [c @cs] = ${c}${cs}
+rewrites [rwstr] = ${rwstr}
+rw1 [_lbb rwn _rbb] = ${_lbb}${rwn}${_rbb}
+rw2 [rws] = ${rws}
+letter1 [c] = ${c}
+letterRest [c] = ${c}
+ws [c] = ${c}
+delimiter [c] = [[]]
+rwstring [@sc] = ${sc}
+stringchar [c] = ${c}
+rwstringWithNewlines [@cs] = ${cs}
+nlstringchar [c] = ${c}
+codeString [rwsn] = ${rwsn}

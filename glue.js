@@ -4,13 +4,13 @@
 const grammar =
       `
 SemanticsSCL {
-  Semantics = SemanticsStatement+
-  SemanticsStatement = RuleName "[" Parameters "]" "=" code? rewrites
+  semantics = ws* semanticsStatement+
+  semanticsStatement = ruleName ws* "[" ws* parameters "]" ws* "=" ws* code? rewrites ws*
 
-  RuleName = letter1 letterRest*
+  ruleName = letter1 letterRest*
   
-  Parameters = Parameter*
-  Parameter = treeparameter | flatparameter
+  parameters = parameter*
+  parameter = treeparameter | flatparameter
   flatparameter = fpws | fpd
   fpws = pname ws+
   fpd = pname delimiter
@@ -21,7 +21,7 @@ SemanticsSCL {
 
   pname = letterRest letterRest*
   rewrites = rw1 | rw2
-  rw1 = "[[" rwstringWithNewlines "]]"
+  rw1 = "[[" ws* rwstringWithNewlines "]]" ws*
   rw2 = rwstring
 
   letter1 = "_" | "a" .. "z" | "A" .. "Z"
@@ -35,7 +35,7 @@ SemanticsSCL {
 
   rwstringWithNewlines = nlstringchar*
   nlstringchar = ~"]]" ~"}}" any
-  code = "{{" codeString "}}"
+  code = "{{" ws* codeString "}}" ws* 
   codeString = rwstringWithNewlines
 
 }
@@ -68,41 +68,48 @@ var varNameStack = [];
 function addSemantics (sem) {
     sem.addOperation ('_glue', {
 	
-	Semantics: function (_1s) { 
-	    var __1 = _1s._glue ().join (''); 
+	semantics: function (_1s, _2s) { 
+	    var __1s = _1s._glue ().join (''); 
+	    var __2s = _2s._glue ().join (''); 
 	    return `
 function addSemantics (sem) { 
   sem.addOperation (
 '_glue', 
 {
-${__1}
+${__2s}
 _terminal: function () { return this.primitiveValue; }
 }); 
 }`; 
 	},
-	SemanticsStatement: function (_1, _2, _3, _4, _5, _6s, _7) {
+	semanticsStatement: function (_1, _2s, _3, _4s, _5, _6, _7s, _8, _9s, _10s, _11, _12s) {
 	    varNameStack = [];
 	    var __1 = _1._glue ();
-	    var __2 = _2._glue ();
+	    var __2s = _2s._glue ().join ('');
 	    var __3 = _3._glue ();
-	    var __4 = _4._glue ();
+	    var __4s = _4s._glue ().join ('');
 	    var __5 = _5._glue ();
-	    var __6s = _6s._glue ().join ('');
-	    var __7 = _7._glue ();
+	    var __6 = _6._glue ();
+	    var __7s = _7s._glue ().join ('');
+	    var __8 = _8._glue ();
+	    var __9s = _9s._glue ().join ('');
+	    var __10s = _10s._glue ().join ('');
+	    var __11 = _11._glue ();
+	    var __12s = _12s._glue ().join ('');
 	    return `
-               ${__1} : function (${__3}) { 
-                          _ruleEnter ("${__1}");
-                          ${__6s}
-                          ${varNameStack.join ('\n')}
-                          _ruleExit ("${__1}");
-                          return \`${__7}\`; 
-                        },
+${__1} : function (${__5}) { 
+_ruleEnter ("${__1}");
+${__10s}
+${varNameStack.join ('\n')}
+var _result = \`${__11}\`; 
+_ruleExit ("${__1}");
+return _result; 
+},
             `;
 	},
-	RuleName: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1 + __2s; },
-	Parameters: function (_1s) {  var __1s = _1s._glue ().join (','); return __1s; },
+	ruleName: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1 + __2s; },
+	parameters: function (_1s) {  var __1s = _1s._glue ().join (','); return __1s; },
 	
-	Parameter: function (_1) { 
+	parameter: function (_1) { 
 	    var __1 = _1._glue ();
 	    return `${__1}`;
 	},
@@ -129,7 +136,7 @@ _terminal: function () { return this.primitiveValue; }
 
 	pname: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1 + __2s;},
 	rewrites: function (_1) { var __1 = _1._glue (); return __1; },
-	rw1: function (_1, _2, _3) { var __2 = _2._glue (); return __2; },
+	rw1: function (_1, _2s, _3, _4, _5s) { var __3 = _3._glue (); return __3; },
 	rw2: function (_1) { var __1 = _1._glue (); return __1; },
 	letter1: function (_1) { var __1 = _1._glue (); return __1; },
 	letterRest: function (_1) { var __1 = _1._glue (); return __1; },
@@ -142,7 +149,7 @@ _terminal: function () { return this.primitiveValue; }
 	rwstringWithNewlines: function (_1s) { var __1s = _1s._glue ().join (''); return __1s; },
 	nlstringchar: function (_1) { var __1 = _1._glue (); return __1; },
 
-	code: function (_1, _2, _3) { return _2._glue (); },
+	code: function (_1, _2s, _3, _4, _5s) { return _3._glue (); },
 	codeString: function (_1) { return _1._glue (); },
 
 	_terminal: function () { return this.primitiveValue; }
@@ -189,6 +196,7 @@ function scopeStack () {
 		return obj.val;
 	    };
 	};
+        console.log ('*** scopeGet error ***');
 	console.log (this._stack);
 	console.log (key);
 	throw "scopeGet internal error";
@@ -202,6 +210,7 @@ function scopeStack () {
               return val;
 	    };
 	};
+        console.log ('*** scopeModify error ***');
 	console.log (this._stack);
 	console.log (key);
 	throw "scopeModify internal error";
