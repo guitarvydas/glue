@@ -430,7 +430,7 @@ _terminal: function () { return this.primitiveValue; }
 
 function main () {
     // usage: node glue <file
-    // reads grammar from "glue.ohm" 
+    // reads grammar from const (above), reads glue spec file from stdin
     var text = getNamedFile ("-");
     var { parser, cst } = ohm_parse (grammar, text);
     var sem = {};
