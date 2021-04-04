@@ -185,7 +185,7 @@ treeparameter : function (__at,_flatp) {
 _ruleEnter ("treeparameter");
 var stk = scopeGet("varNameStack");
     var fp = _flatp._glue ();
-    stk.push (`var ${fp} = _${fp}._glue ();`);
+    stk.push (`var ${fp} = _${fp}._glue ().join ('');`);
     scopeModify ("varNameStack", stk);
 
 var _at = __at._glue ();
