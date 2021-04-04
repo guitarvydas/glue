@@ -20,7 +20,11 @@ SemanticsSCL {
   letter1 = "_" | "a" .. "z" | "A" .. "Z"
   letterRest = "0" .. "9" | letter1
 
-  ws = "\n" | " " | "\t" | "," 
+  comment = "%%" notEOL* EOL
+  notEOL = ~EOL any
+  
+  ws = comment | EOL | " " | "\t" | "," 
+  EOL = "\n"
   delimiter = &"]" | &"="
 
   rwstring = stringchar*
