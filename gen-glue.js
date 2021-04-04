@@ -207,7 +207,7 @@ parameter : function (_p) {
 _ruleEnter ("parameter");
 
 var p = _p._glue ();
-var _result = `${p}`; 
+var _result = `${p},`; 
 _ruleExit ("parameter");
 return _result; 
 },
@@ -430,7 +430,7 @@ _terminal: function () { return this.primitiveValue; }
 
 function main () {
     // usage: node glue <file
-    // reads grammar from const (above), reads glue spec file from stdin
+    // reads grammar from "glue.ohm" 
     var text = getNamedFile ("-");
     var { parser, cst } = ohm_parse (grammar, text);
     var sem = {};
