@@ -16,8 +16,8 @@ scopeAdd("varNameStack", []);
 [[
 ${name} : function (${params}) {
 _ruleEnter ("${name}");
-${scopeGet("varNameStack").join ('')}
 ${code}
+${scopeGet("varNameStack").join ('')}
 var _result = \`${rewrites}\`;
 _ruleExit ("${name}");
 return _result;
@@ -56,6 +56,9 @@ rw1 [_lbb @ws1 rwn _rbb @ws2] = ${rwn}
 rw2 [rws] = ${rws}
 letter1 [c] = ${c}
 letterRest [c] = ${c}
+comment [_pctpct @cs _eol] = ${_pctpct}${cs}${_eol}
+notEol [c] = ${c}
+eol [c] = ${c}
 ws [c] = ${c}
 delimiter [c] = [[]]
 rwstring [@sc] = ${sc}
