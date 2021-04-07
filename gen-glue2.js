@@ -33,7 +33,7 @@ function scopeStack () {
       return a.find (obj => {return obj && obj.key && (obj.key == key)}); };
     this.scopeGet = function (key) {
 	var i = this._topIndex ();
-	for (; i > 0 ; i -= 1) {
+	for (; i >= 0 ; i -= 1) {
 	    var obj = this._lookup (key, this._stack [i]);
 	    if (obj) {
 		return obj.val;
@@ -46,7 +46,7 @@ function scopeStack () {
     };
     this.scopeModify = function (key, val) {
 	var i = this._topIndex ();
-	for (; i > 0 ; i -= 1) {
+	for (; i >= 0 ; i -= 1) {
 	    var obj = this._lookup (key, this._stack [i]);
 	    if (obj) {
               obj.val = val;
