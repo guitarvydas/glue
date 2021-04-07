@@ -27,7 +27,10 @@ SemanticsSCL {
   letter1 = "_" | "a" .. "z" | "A" .. "Z"
   letterRest = "0" .. "9" | letter1
 
-  ws = "\\n" | " " | "\\t" | "," 
+  comment = "%%" notEol* eol
+  notEol = ~eol any
+  eol = "\\n"
+  ws = comment | eol | " " | "\\t" | "," 
   delimiter = &"]" | &"="
 
   rwstring = stringchar*
@@ -173,8 +176,8 @@ var rewrites = _rewrites._glue ();
 var ws5 = _ws5._glue ().join ('');
 var _result = `${name} : function (${params}) {
 _ruleEnter ("${name}");
-${scopeGet("varNameStack").join ('')}
 ${code}
+${scopeGet("varNameStack").join ('')}
 var _result = \`${rewrites}\`;
 _ruleExit ("${name}");
 return _result;
@@ -348,6 +351,35 @@ _ruleExit ("letterRest");
 return _result; 
 },
             
+comment : function (__pctpct,_cs,__eol) { 
+_ruleEnter ("comment");
+
+var _pctpct = __pctpct._glue ();
+var cs = _cs._glue ().join ('');
+var _eol = __eol._glue ();
+var _result = `${_pctpct}${cs}${_eol}`; 
+_ruleExit ("comment");
+return _result; 
+},
+            
+notEol : function (_c) { 
+_ruleEnter ("notEol");
+
+var c = _c._glue ();
+var _result = `${c}`; 
+_ruleExit ("notEol");
+return _result; 
+},
+            
+eol : function (_c) { 
+_ruleEnter ("eol");
+
+var c = _c._glue ();
+var _result = `${c}`; 
+_ruleExit ("eol");
+return _result; 
+},
+            
 ws : function (_c) { 
 _ruleEnter ("ws");
 
@@ -462,7 +494,7 @@ function scopeStack () {
       return a.find (obj => {return obj && obj.key && (obj.key == key)}); };
     this.scopeGet = function (key) {
 	var i = this._topIndex ();
-	for (; i > 0 ; i -= 1) {
+	for (; i >= 0 ; i -= 1) {
 	    var obj = this._lookup (key, this._stack [i]);
 	    if (obj) {
 		return obj.val;
@@ -475,7 +507,7 @@ function scopeStack () {
     };
     this.scopeModify = function (key, val) {
 	var i = this._topIndex ();
-	for (; i > 0 ; i -= 1) {
+	for (; i >= 0 ; i -= 1) {
 	    var obj = this._lookup (key, this._stack [i]);
 	    if (obj) {
               obj.val = val;

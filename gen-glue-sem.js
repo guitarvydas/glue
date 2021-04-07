@@ -109,8 +109,8 @@ var rewrites = _rewrites._glue ();
 var ws5 = _ws5._glue ().join ('');
 var _result = `${name} : function (${params}) {
 _ruleEnter ("${name}");
-${scopeGet("varNameStack").join ('')}
 ${code}
+${scopeGet("varNameStack").join ('')}
 var _result = \`${rewrites}\`;
 _ruleExit ("${name}");
 return _result;
@@ -281,6 +281,35 @@ _ruleEnter ("letterRest");
 var c = _c._glue ();
 var _result = `${c}`; 
 _ruleExit ("letterRest");
+return _result; 
+},
+            
+comment : function (__pctpct,_cs,__eol) { 
+_ruleEnter ("comment");
+
+var _pctpct = __pctpct._glue ();
+var cs = _cs._glue ().join ('');
+var _eol = __eol._glue ();
+var _result = `${_pctpct}${cs}${_eol}`; 
+_ruleExit ("comment");
+return _result; 
+},
+            
+notEol : function (_c) { 
+_ruleEnter ("notEol");
+
+var c = _c._glue ();
+var _result = `${c}`; 
+_ruleExit ("notEol");
+return _result; 
+},
+            
+eol : function (_c) { 
+_ruleEnter ("eol");
+
+var c = _c._glue ();
+var _result = `${c}`; 
+_ruleExit ("eol");
 return _result; 
 },
             
