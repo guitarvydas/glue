@@ -88,10 +88,10 @@ function scopeStack () {
 		return obj.val;
 	    };
 	};
-        console.log ('*** scopeGet error ***');
+        console.log ('*** scopeGet error ' + key + ' ***');
 	console.log (this._stack);
 	console.log (key);
-	throw "scopeGet internal error";
+	throw "scopeGet internal error ";
     };
     this.scopeModify = function (key, val) {
 	var i = this._topIndex ();
@@ -102,10 +102,10 @@ function scopeStack () {
               return val;
 	    };
 	};
-        console.log ('*** scopeModify error ***');
+        console.log ('*** scopeModify error ' + key + ' ***');
 	console.log (this._stack);
 	console.log (key);
-	throw "scopeModify internal error";
+	throw "scopeModify internal error " + key;
     };
 }
 
@@ -500,7 +500,7 @@ function scopeStack () {
 		return obj.val;
 	    };
 	};
-        console.log ('*** scopeGet error ***');
+        console.log ('*** scopeGet error key=' + key + ' ***');
 	console.log (this._stack);
 	console.log (key);
 	throw "scopeGet internal error";
@@ -514,7 +514,7 @@ function scopeStack () {
               return val;
 	    };
 	};
-        console.log ('*** scopeModify error ***');
+        console.log ('*** scopeModify error key=' + key + ' ***');
 	console.log (this._stack);
 	console.log (key);
 	throw "scopeModify internal error";
