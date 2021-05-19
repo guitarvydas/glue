@@ -21,7 +21,7 @@ SemanticsSCL {
 
   pname = letterRest letterRest*
   rewrites = rw1 | rw2
-  rw1 = "[[" ws* rwstringWithNewlines "]]" ws*
+  rw1 = "[[" ws* code? rwstringWithNewlines "]]" ws*
   rw2 = rwstring
 
   letter1 = "_" | "a" .. "z" | "A" .. "Z"
@@ -53,7 +53,9 @@ function ohm_parse (grammar, text) {
     if (cst.succeeded ()) {
 	return { parser: parser, cst: cst };
     } else {
-	console.log (parser.trace (text).toString ());
+	process.stderr.write (cst.message + '\n');
+	process.exit (1);
+	//console.log (parser.trace (text).toString ());
 	throw "glue: Ohm matching failed";
     }
 }
@@ -140,7 +142,16 @@ return _result;
 
 	pname: function (_1, _2s) { var __1 = _1._glue (); var __2s = _2s._glue ().join (''); return __1 + __2s;},
 	rewrites: function (_1) { var __1 = _1._glue (); return __1; },
-	rw1: function (_1, _2s, _3, _4, _5s) { var __3 = _3._glue (); return __3; },
+	rw1: function (_1, _2s, codeQ, _3, _4, _5s) {
+	    var code = codeQ._glue ();
+	    var __3 = _3._glue ();
+	    if (0 === code.length) {
+  		return __3;
+	    } else {
+		process.stderr.write ('code is NOT empty\n');
+  		return `${code}${__3}`;
+	    }
+	},
 	rw2: function (_1) { var __1 = _1._glue (); return __1; },
 	letter1: function (_1) { var __1 = _1._glue (); return __1; },
 	letterRest: function (_1) { var __1 = _1._glue (); return __1; },
@@ -171,8 +182,8 @@ function main () {
 	sem = parser.createSemantics ();
 	addSemantics (sem);
 	outputString = sem (cst)._glue ();
+	return { cst: cst, semantics: sem, resultString: outputString };
     }
-    return { cst: cst, semantics: sem, resultString: outputString };
 }
 
 
@@ -203,7 +214,8 @@ function scopeStack () {
         console.log ('*** scopeGet error ' + key + ' ***');
 	console.log (this._stack);
 	console.log (key);
-	throw "scopeGet internal error ";
+        process.exit (1);
+	//throw "scopeGet internal error ";
     };
     this.scopeModify = function (key, val) {
 	var i = this._topIndex ();

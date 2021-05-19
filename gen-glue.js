@@ -500,10 +500,10 @@ function scopeStack () {
 		return obj.val;
 	    };
 	};
-        console.log ('*** scopeGet error key=' + key + ' ***');
-	console.log (this._stack);
-	console.log (key);
-	throw "scopeGet internal error";
+        process.stderr.write ('*** scopeGet error key=' + key + ' ***' + "\\n");
+	process.stderr.write (this._stack.toString () + "\\n");
+	process.stderr.write (key.toString () + "\\n");
+	process.exit (1);
     };
     this.scopeModify = function (key, val) {
 	var i = this._topIndex ();
@@ -514,10 +514,10 @@ function scopeStack () {
               return val;
 	    };
 	};
-        console.log ('*** scopeModify error key=' + key + ' ***');
-	console.log (this._stack);
-	console.log (key);
-	throw "scopeModify internal error";
+        process.stderr.write ('*** scopeModify error key=' + key + ' ***' + "\\n");
+	process.stderr.write (this._stack.toString () + "\\n");
+	process.stderr.write (key.toString () + "\\n");
+	process.exit (1);
     };
 }
 
