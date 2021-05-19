@@ -39,9 +39,9 @@ function scopeStack () {
 		return obj.val;
 	    };
 	};
-        console.log ('*** scopeGet error key=' + key + ' ***');
-	console.log (this._stack);
-	console.log (key);
+        process.stderr.write ('*** scopeGet error key=' + key + ' ***\n');
+	process.stderr.write (this._stack); process.stderr.write ('\n');
+	process.stderr.write (key); process.stderr.write ('\n');
 	throw "scopeGet internal error";
     };
     this.scopeModify = function (key, val) {
@@ -53,9 +53,9 @@ function scopeStack () {
               return val;
 	    };
 	};
-        console.log ('*** scopeModify error key=' + key + ' ***');
-	console.log (this._stack);
-	console.log (key);
+        process.stderr.write ('*** scopeModify error key=' + key + ' ***\n');
+	process.stderr.write (this._stack); process.stderr.write ('\n');
+	process.stderr.write (key); process.stderr.write ('\n');
 	throw "scopeModify internal error";
     };
 }
